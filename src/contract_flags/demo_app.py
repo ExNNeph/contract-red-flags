@@ -1,5 +1,6 @@
 """Local web demo, started with `contract-flags demo`."""
 import os
+import re
 
 import pandas as pd
 import streamlit as st
@@ -39,6 +40,11 @@ Die Creatorin arbeitet während der Laufzeit im Bereich Getränke nur mit der Ma
 Die Marke kann den Vertrag jederzeit fristlos ohne Angabe von Gründen kündigen. Bereits erbrachte Leistungen werden nicht vergütet.""",
 }
 BADGE = {"high": "🔴 High", "medium": "🟠 Medium", "low": "🟡 Low"}
+
+
+def plain(text: str) -> str:
+    """Escape Markdown so contract text shows as written ('3. Payment' must not become a numbered list)."""
+    return re.sub(r"([\\`*_{}\[\]()#+\-.!|>~$])", r"\\\1", text)
 ORDER = {"high": 0, "medium": 1, "low": 2}
 
 st.set_page_config(page_title="Contract Red Flags demo", page_icon="🚩", layout="wide")
@@ -109,8 +115,8 @@ for f in sorted(result.flags, key=lambda f: (ORDER[risks[f.risk_id].severity], f
     t = risk.text(result.lang)
     with st.container(border=True):
         st.markdown(f"**{BADGE[risk.severity]} · {t.title}** · clause {f.clause + 1}")
-        st.markdown(f"> {f.quote}")
-        st.write(f.explanation)
+        st.markdown(f"> {plain(f.quote)}")
+        st.markdown(plain(f.explanation))
         st.markdown(f"**Ask:** {t.question}")
 
 if result.dropped:

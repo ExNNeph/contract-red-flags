@@ -29,6 +29,13 @@ def test_demo_checks_both_samples(app, sample):
     assert len(at.dataframe) == 1  # the retrieval table
 
 
+def test_quotes_are_shown_verbatim_not_as_markdown(app):
+    at = app.run()
+    at.button[0].click().run()
+    quotes = [m.value for m in at.markdown if m.value.startswith("> ")]
+    assert quotes and all(r"\." in q for q in quotes)  # "3. Intellectual Property" stays text, not a list
+
+
 def test_demo_button_disabled_without_text(app):
     at = app.run()
     at.radio[0].set_value("Paste my own").run()
