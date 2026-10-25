@@ -1,0 +1,26 @@
+[project]
+name = "contract-red-flags"
+version = "0.1.0"
+description = "Flag the clauses worth asking about before you sign: BM25 retrieval over a bilingual risk knowledge base, Claude checks each clause, a guardrail keeps every flag grounded."
+requires-python = ">=3.10"
+dependencies = ["pydantic>=2", "anthropic>=0.80"]
+
+[project.optional-dependencies]
+demo = ["streamlit>=1.50"]
+dev = ["pytest", "streamlit>=1.50"]
+
+[project.scripts]
+contract-flags = "contract_flags.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+contract_flags = ["risks.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "evals"]

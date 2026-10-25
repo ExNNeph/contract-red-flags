@@ -1,0 +1,25 @@
+Freelance Development Agreement
+
+1. Scope
+The Contractor will develop a web application as described in Annex A.
+
+2. Fees and Payment
+The Client pays a fixed fee of EUR 12,000. Invoices are payable within 90 days of receipt.
+
+3. Revisions
+The Contractor shall make all changes requested by the Client until the Client is fully satisfied, without additional charge.
+
+4. Intellectual Property
+All rights in the work product, including any pre-existing tools, libraries and templates used by the Contractor, are assigned to the Client. The rights transfer upon creation, regardless of payment.
+
+5. Liability
+The Contractor's liability is limited to the total fee paid under this agreement, except in cases of intent or gross negligence.
+
+6. Confidentiality
+Both parties keep confidential information secret for three years after the end of this agreement. Information that is publicly available is excluded.
+
+7. Termination
+The Client may terminate this agreement at any time without notice. Work performed until termination will not be compensated.
+
+8. Governing Law
+This agreement is governed by the laws of Germany. The courts of Berlin have jurisdiction.

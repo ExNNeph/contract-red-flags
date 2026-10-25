@@ -1,0 +1,66 @@
+{
+  "en-freelance-dev.txt": {
+    "flags": [
+      {"anchor": "payable within 90 days", "risk": "long_payment_terms"},
+      {"anchor": "until the Client is fully satisfied", "risk": "unlimited_revisions"},
+      {"anchor": "pre-existing tools, libraries and templates", "risk": "ip_full_transfer"},
+      {"anchor": "pre-existing tools, libraries and templates", "risk": "rights_before_payment"},
+      {"anchor": "terminate this agreement at any time without notice", "risk": "one_sided_termination"}
+    ],
+    "fair": ["liability is limited to the total fee", "secret for three years", "governed by the laws of Germany"]
+  },
+  "en-creator-brand-deal.txt": {
+    "flags": [
+      {"anchor": "in perpetuity, including paid advertising", "risk": "unlimited_usage"},
+      {"anchor": "shall not work with any other brand", "risk": "exclusivity"},
+      {"anchor": "until the Brand approves it", "risk": "unlimited_revisions"},
+      {"anchor": "penalty of USD 5,000", "risk": "contract_penalty"},
+      {"anchor": "indemnify and hold the Brand harmless", "risk": "broad_indemnity"},
+      {"anchor": "amend these terms at its sole discretion", "risk": "unilateral_changes"}
+    ],
+    "fair": ["payable within 14 days after publication"]
+  },
+  "en-agency-subcontract.txt": {
+    "flags": [
+      {"anchor": "received payment from the end client", "risk": "pay_when_paid"},
+      {"anchor": "any company in Europe", "risk": "broad_noncompete"},
+      {"anchor": "waives any right to be named", "risk": "moral_rights_waiver"},
+      {"anchor": "may not show the designs in a portfolio", "risk": "portfolio_ban"},
+      {"anchor": "renews automatically for successive", "risk": "auto_renewal"},
+      {"anchor": "confidential indefinitely", "risk": "perpetual_confidentiality"},
+      {"anchor": "liable for all damages without limitation", "risk": "unlimited_liability"}
+    ],
+    "fair": ["two rounds of revisions"]
+  },
+  "de-freelancer-vertrag.txt": {
+    "flags": [
+      {"anchor": "einschließlich seiner Vorarbeiten und Werkzeuge", "risk": "ip_full_transfer"},
+      {"anchor": "einschließlich seiner Vorarbeiten und Werkzeuge", "risk": "rights_before_payment"},
+      {"anchor": "haftet unbeschränkt", "risk": "unlimited_liability"},
+      {"anchor": "Vertragsstrafe von 500 Euro", "risk": "contract_penalty"},
+      {"anchor": "Gerichtsstand ist Singapur", "risk": "foreign_jurisdiction"}
+    ],
+    "fair": ["innerhalb von 14 Tagen nach Rechnungseingang", "mit einer Frist von vier Wochen kündigen"]
+  },
+  "de-influencer-kooperation.txt": {
+    "flags": [
+      {"anchor": "90 Tage nach Veröffentlichung", "risk": "long_payment_terms"},
+      {"anchor": "zeitlich unbegrenzt, weltweit und in allen Medien", "risk": "unlimited_usage"},
+      {"anchor": "nach eigenem Ermessen durch Mitteilung ändern", "risk": "unilateral_changes"},
+      {"anchor": "von sämtlichen Ansprüchen Dritter frei", "risk": "broad_indemnity"},
+      {"anchor": "jederzeit fristlos ohne Angabe von Gründen", "risk": "one_sided_termination"}
+    ],
+    "fair": ["Exklusivität wird mit 500 Euro gesondert vergütet"]
+  },
+  "de-agentur-rahmenvertrag.txt": {
+    "flags": [
+      {"anchor": "erst nach Zahlungseingang durch den jeweiligen Endkunden", "risk": "pay_when_paid"},
+      {"anchor": "bis der Endkunde vollständig zufrieden ist", "risk": "unlimited_revisions"},
+      {"anchor": "verlängert sich automatisch", "risk": "auto_renewal"},
+      {"anchor": "nicht als Referenz oder in seinem Portfolio", "risk": "portfolio_ban"},
+      {"anchor": "zeitlich unbegrenzt geheim", "risk": "perpetual_confidentiality"},
+      {"anchor": "verzichtet auf die Nennung als Urheber", "risk": "moral_rights_waiver"}
+    ],
+    "fair": ["nicht direkt für die in Anlage 2 genannten Kunden"]
+  }
+}
