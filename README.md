@@ -112,14 +112,31 @@ With a key, every extra and missed flag is printed per contract for error analys
 
 Retrieval recall: **@1 94%, @3 100%, @5 100%**.
 
-| method | flags | precision | recall | F1 | fair clauses flagged |
-|---|---|---|---|---|---|
-| retrieval only (top match) | 43 | 74% | 94% | 83% | 9 / 9 |
-| retrieval + Claude + guardrail | not measured yet | | | | |
+`python evals/run_eval.py 3` (Claude 3 runs per contract):
+
+| method | flags | precision | recall | F1 | fair clauses flagged | guardrail drops |
+|---|---|---|---|---|---|---|
+| retrieval only (top match) | 43 | 74% | 94% | 83% | 9 / 9 | 0 |
+| retrieval + Claude (`claude-opus-5-5`) + guardrail | 102 | **100%** | **100%** | **100%** | **0 / 27** | 0 |
 
 Retrieval alone finds almost every red flag but also flags every fair clause, because the fair clauses
 use the same words as the risky ones. It also misses the second risk when one clause holds two (for
 example "all rights, including pre-existing tools" *and* "transfer upon creation, regardless of payment").
+
+With Claude judging the retrieved candidates, all 34 red flags were found in each of the three runs,
+in English and German, including both risks in the combined clauses, and none of the fair clauses was
+flagged in any run. The guardrail never had to drop a flag.
+
+Cost: about 2,400 input and 900 output tokens per contract, roughly $0.03 per contract at Opus 5.5
+prices; the full run (18 Claude calls) cost about $0.49.
+
+**What 100% means here:** the eval is saturated, so it can no longer tell a better prompt from a
+worse one. It proves the pipeline works and the traps are handled, not that the tool is reliable on
+real contracts. The contracts are short and clearly worded, and they share vocabulary with the
+knowledge base because one person wrote both. The next step is a harder set: real-world legalese,
+long clauses with nested exceptions ("except where…, provided that…"), risks split across two
+clauses, and risks the knowledge base does not cover, to measure how often the tool stays silent
+when it should not.
 
 **Caveat on the 100% retrieval:** the knowledge base phrases and the eval contracts were written by the
 same person, so they share vocabulary. Real contracts will retrieve worse; the next step is embeddings
