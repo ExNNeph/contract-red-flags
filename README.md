@@ -15,12 +15,26 @@ Pick a sample, upload a `.txt`/`.md` file or paste a contract, then click **Chec
 
 ![Contract input with samples and file upload](docs/preview-input.png)
 
-Each flag shows severity, the risk, the exact wording, why it matters and what to ask. This screenshot
-shows **retrieval only** (no API key): it flags clause 4 as "Unlimited liability" although that clause
-*limits* liability to the fee. Retrieval sees the topic, not the meaning, which is the gap the Claude
-step closes:
+Each flag shows severity, the risk, the exact wording that creates it, why it matters and what to ask.
+With Claude, the English sample gets five flags. The liability clause, which *limits* liability to the
+fee, is correctly left alone:
+
+![Claude's flags on the English sample](docs/preview-flags.png)
+
+German contracts get German titles, explanations and questions. In the German sample the paid,
+category-limited exclusivity is correctly not flagged:
+
+![Claude's flags on the German sample](docs/preview-flags-de.png)
+
+For comparison, **retrieval only** (no API key) on the English sample: it flags the fair liability clause
+as "Unlimited liability" and quotes whole clauses. Retrieval sees the topic, not the meaning, which is
+the gap the Claude step closes:
 
 ![Flags from retrieval only](docs/preview-baseline.png)
+
+The retrieval step is visible too: every clause with its top three candidate risks and BM25 scores.
+
+![Retrieved candidates per clause](docs/preview-retrieval.png)
 
 ## Run it locally (step by step)
 
